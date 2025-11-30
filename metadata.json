@@ -1,0 +1,8 @@
+{
+  "name": "GeoFuite Tracker",
+  "description": "Application de signalement et de suivi géolocalisé des fuites d'eau ou de gaz.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ]
+}
