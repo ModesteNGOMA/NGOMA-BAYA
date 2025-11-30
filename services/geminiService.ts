@@ -1,18 +1,12 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { AIAnalysisResult, LeakStatus } from "../types";
 
-const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const analyzeLeakDescription = async (
   description: string,
   address: string
 ): Promise<AIAnalysisResult | null> => {
-  if (!apiKey) {
-    console.warn("API Key missing for Gemini Service");
-    return null;
-  }
-
   try {
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
